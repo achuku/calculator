@@ -26,3 +26,10 @@ console.log(divide(70,5));
 function operate (num1, num2) {
     return add()|| subtract() || multiply() || divide();
 }
+
+const btn1 = document.getElementById('one');
+btn1.addEventListener('click', () => {
+    num1 = 1;
+    console.log('User selected:', num1);
+    btn1.innerHTML = num1;
+});
