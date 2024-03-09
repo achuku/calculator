@@ -31,5 +31,4 @@ const btn1 = document.getElementById('one');
 btn1.addEventListener('click', () => {
     num1 = 1;
     console.log('User selected:', num1);
-    btn1.innerHTML = num1;
 });
