@@ -22,3 +22,7 @@ function divide (a, b) {
     return a / b;
 }
 console.log(divide(70,5));
+
+function operate (num1, num2) {
+    return add()|| subtract() || multiply() || divide();
+}
