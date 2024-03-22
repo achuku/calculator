@@ -1,4 +1,6 @@
-var num1, operator, num2;
+let operator = '';
+let previousValue = '';
+let currentValue = '';
 
 function add(a, b){
     return a + b;
@@ -27,8 +29,23 @@ function operate (num1, num2) {
     return add()|| subtract() || multiply() || divide();
 }
 
-const btn1 = document.getElementById('one');
-btn1.addEventListener('click', () => {
-    num1 = 1;
-    console.log('User selected:', num1);
-});
+//Store all HTML components in JS
+document.addEventListener('DOMContentLoaded', function(){
+    let decimal = document.querySelector('.decimal');
+    let numbers = document.querySelectorAll('.number');
+    let operators = document.querySelectorAll('.operator');
+    let clear = document.querySelector('.clear');
+    let equal = document.querySelector('.equal');
+    let previousScreen = document.querySelector('.previous');
+    let currentScreen = document.querySelector('.current');
+
+    //Loop through number buttons
+    numbers.forEach((number) => number.addEventListener('click', function(e){
+        handleNumber(e.target.textContent);
+        currentScreen.textContent = currentValue;
+    }))
+})
+
+function handleNumber (num) {
+    currentValue += num;
+}
